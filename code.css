@@ -1,0 +1,53 @@
+.caseBlanc {
+    height: 35px;
+    width: 35px;
+    border: 1px solid #000000;
+}
+
+.anotherObstacle {
+    height: 35px;
+    width: 35px;
+    border: 1px solid #ffffff;
+}
+
+/* #boardgame {
+    height: 412px;
+    width: 412px;
+    border :1px solid black;
+} */
+
+.caseBlanc {
+    background-color: #ffffff;
+}
+
+.caseCharacter1 {
+    background-color: blue;
+}
+
+.caseCharacter2 {
+    background-color: darkred;
+}
+
+.caseCharacter3 {
+    background-color: yellowgreen;
+}
+
+.caseCharacter4 {
+    background-color: orange;
+}
+
+.caseCharacter5 {
+    background-color: darkgreen;
+}
+
+.caseCharacter6 {
+    background-color: cyan;
+}
+
+.caseCharacter7 {
+    background-color: purple;
+}
+
+.obstacle {
+    background-color: black;
+}
