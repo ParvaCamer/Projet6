@@ -43,6 +43,7 @@ class Board {
         $('#' + coordPlayer2[0] + '-' + coordPlayer2[1]).addClass(this.players[1].nameClass)
     }
 
+
     randomSpot() {
         let random_x = randomIndex(10), // x joueur 1
             random_y = randomIndex(10), // y joueur 1
@@ -51,14 +52,15 @@ class Board {
         console.log("On test les positions : ")
         console.log("[", random_x, random_y, "]")
         console.log("[", random_v, random_w, "]")
-        while (this.checkObstacle(random_x, random_y) === true) {
+        while (this.checkObstacle(random_x, random_y) === true || this.checkObstacle(random_x - 1, random_y) === true || this.checkObstacle(random_x + 1, random_y) === true || this.checkObstacle(random_x, random_y - 1) === true || this.checkObstacle(random_x, random_y + 1) === true) { // replace le joueur 1 si présence d'obstacle
             random_x = randomIndex(10) // x joueur 1
             random_y = randomIndex(10)// y joueur 1
         }
-        while (this.checkObstacle(random_v, random_w) === true) {
+        while (this.checkObstacle(random_v, random_w) === true || this.checkObstacle(random_v - 1, random_w) === true || this.checkObstacle(random_v + 1, random_w) === true || this.checkObstacle(random_v, random_w - 1) === true || this.checkObstacle(random_v, random_w + 1) === true) { // replace le joueur 2 si présence d'obstacle
             random_v = randomIndex(10) // x joueur 2
             random_w = randomIndex(10)// y joueur 2
         }
+
         this.moovePlayer(0, random_x, random_y)
         this.moovePlayer(1, random_v, random_w)
 
@@ -68,6 +70,7 @@ class Board {
         return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
     }
 
+    // Vérifie la présence d'obstacle
     checkObstacle(x, y) {
         let className = ["anotherObstacle"]
         let anotherObstacle = document.getElementById(x + '-' + y)
